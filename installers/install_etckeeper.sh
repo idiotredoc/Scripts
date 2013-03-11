@@ -6,8 +6,7 @@ TBI=epel-release-5-4.noarch.rpm
 
 echo "Installing Etc-keeper and prereqs"
 echo "Checking for EPEL"
-yum repolist | grep epel
-if [ $? == "1" ]; then
+if yum repolist | grep epel; then
 echo "Installing EPEL"
 rpm -Uvh http://dl.fedoraproject.org/pub/epel/$RELEASE/$ARCH/$TBI
 fi
