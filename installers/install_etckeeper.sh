@@ -9,7 +9,7 @@ if yum repolist | grep epel; then
 echo "EPEL found..."
 else
 echo "Installing EPEL"
-TBI=curl http://dl/fedoraproject.org/pub/epel/$RELEASE/$ARCH/ | grep -o '>epel-release.*<' | sed -e 's/>//' -e 's/<//'
+TBI=`curl http://dl/fedoraproject.org/pub/epel/$RELEASE/$ARCH/ | grep -o '>epel-release.*<' | sed -e 's/>//' -e 's/<//'`
 rpm -Uvh http://dl.fedoraproject.org/pub/epel/$RELEASE/$ARCH/$TBI
 fi
 echo "Installing etckeeper, bzr"
