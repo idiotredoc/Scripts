@@ -2,7 +2,6 @@
 set -e
 ARCH=`uname -m`
 RELEASE=`cat /etc/redhat-release | awk '{ print substr($3,1,1)}'`
-TBI=epel-release-5-4.noarch.rpm
 
 echo "Installing Etc-keeper and prereqs"
 echo "Checking for EPEL"
@@ -10,6 +9,7 @@ if yum repolist | grep epel; then
 echo "EPEL found..."
 else
 echo "Installing EPEL"
+TBI=curl http://dl/fedoraproject.org/pub/epel/$RELEASE/$ARCH/ | grep -o '>epel-release.*<' | sed -e 's/>//' -e 's/<//'
 rpm -Uvh http://dl.fedoraproject.org/pub/epel/$RELEASE/$ARCH/$TBI
 fi
 echo "Installing etckeeper, bzr"
