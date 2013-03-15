@@ -1,6 +1,6 @@
 #!/bin/bash -e
 DATE=`/bin/date '+%Y%m%d'`
-DIR=/tmp/apache
+DIR=/files/backups/tmp/
 WHICHTYPE="$1"
 if [ -z "${WHICHTYPE}" ];
 then
