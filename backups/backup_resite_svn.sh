@@ -6,7 +6,7 @@ TMPDIR=$DIR/tmp
 WHICHTYPE="$1"
 INITTIME=$(date +%S)
 
-if [ $day -eq 1]; 
+if [ $day -eq 1 ]; 
 then
 	echo "It's the first of the month! Dont run."
 	exit

@@ -4,7 +4,7 @@ DIR=/logs/tmp/files
 TMPDIR=$DIR/tmp
 INITTIME=$(date +%S)
 day=`/bin/date '+%d'`
-if [ $day -eq 1];
+if [ $day -eq 1 ];
 then
         echo "It's the first of the month! Dont run."
         exit
