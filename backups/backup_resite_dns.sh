@@ -2,7 +2,14 @@
 PATH=/usr/mysql/bin:/usr/sfw/sbin:/usr/sfw/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 DIR=/archive/primary/resite/mysql/powerdns
 DATESTAMP=$(date +%Y%m%d) 
-MAIL=systems@resiteonline.com
+day=`/bin/date '+%d'`
+if [ $day -eq 1 ];
+then
+        echo "It's the first of the month! Dont run."
+        exit
+fi
+
+INITTIME=$(date +%S)
 ERRMSG="There has been a problem backing up $FILENAME on $DATESTAMP from dsrscns01"
 DB_HOST='dsrscns01.int.resiteit.com'
 
@@ -12,7 +19,7 @@ find ${DIR} -type f -mtime +$DAYS_KEEP | xargs rm -f
 
 # create backups securely
 umask 002
-
+echo "Copying DNS backup from dsrscns01..."
 # Backup powerdns external and internal db
 DBLIST=(powerdns pdns_ds_int)
 for DB in ${DBLIST[*]}; do
@@ -22,4 +29,7 @@ for DB in ${DBLIST[*]}; do
     echo $ERRMSG
   fi
 done
+ENDTIME=$(date +%S)
+TTIME=$(( $ENDTIME - $INITTIME ))
+echo "Total runtime: $TTIME seconds"
 
