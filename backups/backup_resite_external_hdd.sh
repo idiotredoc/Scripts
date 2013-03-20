@@ -4,6 +4,7 @@ DATESTAMP=$(date +%Y%m%d)
 MOUNT=/mnt/external_backup_hdd
 LOCALDIR=$MOUNT/$DATESTAMP
 HOST='dsrscbkp01'
+INITTIME=$(date +%S)
 echo "Checking if HDD is mounted..."
 if [ mount | grep "on ${MOUNT} type" > /dev/null ]; then  
 	echo "Creating backup directory..."
@@ -19,11 +20,15 @@ if [ mount | grep "on ${MOUNT} type" > /dev/null ]; then
 	if [ -b /dev/sdc1 ]; then
 		echo "Writing copy to second HDD..."
 		dd if=/dev/sdb1 of=/dev/sdc1
+		ENDTIME=$(date +%S)
 	else
 		echo "/dev/sdc1 is not mounted!"
-		exit
+                ENDTIME=$(date +%S)
 	fi
 else
 	echo "$MOUNT is not mounted!"
-	exit
+        ENDTIME=$(date +%S)
 fi
+TTIME=$(( $INITTIME - $ENDTIME ))
+echo "Total runtime: $TTIME seconds"
+

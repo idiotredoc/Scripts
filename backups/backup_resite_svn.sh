@@ -1,45 +1,68 @@
-#!/bin/bash -e
+#!/bin/bash 
+day=`/bin/date '+%d'`
 date=`/bin/date '+%Y%m%d'`
-DIR=/tmp/svn
+DIR=/logs/tmp/svn
+TMPDIR=$DIR/tmp
 WHICHTYPE="$1"
+INITTIME=$(date +%S)
+
+if [ $day -eq 1]; 
+then
+	echo "It's the first of the month! Dont run."
+	exit
+fi
+mkdir $TMPDIR $TMPDIR/rit $TMPDIR/clientdev $TMPDIR/core-trunk
 if [ -z "$WHICHTYPE" ];
 then
         WHICHTYPE="weekly"
 fi
 if [ "$WHICHTYPE" = "weekly" ];
 then
-        svn export -q --force http://svn.dev.residentsource.com/svn/rit/trunk/rit /tmp/svn/rit
-        svn export -q --force http://svn.dev.residentsource.com/svn/rit/trunk/clientdev /tmp/svn/clientdev
-        svn export -q --force http://svn.dev.residentsource.com/svn/rit/projects/core/trunk  /tmp/svn/core-trunk
-        tar cf $DIR/resitesvn-full-$date.tar /tmp/svn
-        gzip $DIR/resitesvn-full-$date.tar.gz $DIR/resitesvn-full-$date.tar
-        scp $DIR/resitesvn-full-$date.tar.gz backup@dsrscbkp01:~/resite/svn/.
-        ssh backup@dsrscbkp01 "find /archive/primary/resite/svn/resite-full* -mtime +5 -exec rm {} \;"
-        rm -rf /tmp/svn/*
-
+	echo "Exporting rit svn..."
+        svn export -q --force http://svn.dev.residentsource.com/svn/rit/trunk/rit $TMPDIR/rit
+	echo "Exporting clientdev svn..."
+        svn export -q --force http://svn.dev.residentsource.com/svn/rit/trunk/clientdev $TMPDIR/clientdev
+	echo "Exporting core svn..."
+        svn export -q --force http://svn.dev.residentsource.com/svn/rit/projects/core/trunk  $TMPDIR/core-trunk
+	tar -zcf $DIR/resite_svn_full_$date.tar.gz $TMPDIR/*
+        echo "Copying to dsrscbkp01"
+	scp $DIR/resite_svn_full_$date.tar.gz backup@dsrscbkp01:~/resite/svn/.
+        ssh backup@dsrscbkp01 "find /archive/primary/resite/svn/resite_svn_full* -mtime +30 -exec rm {} \;"
+        rm -rf $TMPDIR
+	rm -rf $DIR/*
+	
 
 elif [ "$WHICHTYPE" = "daily" ];
 then
-        yesterday=`/bin/date --date="yesterday" "+%Y-%m-%d"`
-        today=`/bin/date "+%Y-%m-%d"`
+	yesterday=`/bin/date --date="yesterday" "+%Y-%m-%d"`
+	today=`/bin/date "+%Y-%m-%d"`
 
-        svn log  http://svn.dev.residentsource.com/svn/rit/trunk -qv -r {$yesterday}:{$today}|/bin/grep trunk|/bin/cut -d" " -f 5 >/tmp/svn/svnchangelog
+	svn log  http://svn.dev.residentsource.com/svn/rit/trunk -qv -r {$yesterday}:{$today}|/bin/grep trunk|/bin/cut -d" " -f 4,5 >$TMPDIR/svnchangelog
 
-        cat /tmp/svn/svnchangelog | while read LINE; do
-        filename=`/bin/echo $LINE | /bin/awk -F/ '{ print $NF }'`
-        fpath=`/bin/echo $LINE | /bin/awk 'BEGIN{FS=OFS="/"}{$NF=""; NF--; print}'`
-        npath=`/bin/echo $fpath | /bin/cut  -c2-`
-        rpath=$DIR/$npath
-        finalpath=$rpath/$filename
+	cat $TMPDIR/svnchangelog | while read LINE; do
+	if [ `/bin/echo $LINE | /bin/awk {'print $1'}` = "D"];
+	then
+		echo "Skipping `echo $LINE | awk {'print $2'}`, scheduled for deletion"
+		continue
+	else
+	fi
+    	filename=`/bin/echo $LINE | /bin/awk -F/ '{ print $NF }'`
+    	fpath=`/bin/echo $LINE | /bin/awk 'BEGIN{FS=OFS="/"}{$NF=""; NF--; print}'`
+   	npath=`/bin/echo $fpath | /bin/cut  -c2-`
+    	rpath=$TMPDIR/$npath
+    	finalpath=$rpath/$filename
 
-        mkdir -p $rpath
-        svn -q export --force http://svn.dev.residentsource.com/svn/rit/$LINE $finalpath
+    	mkdir -p $rpath
+    	svn -q export --force http://svn.dev.residentsource.com/svn/rit/$LINE $finalpath
 done
-        /bin/tar cf $DIR/resitesvn-incr-$date.tar /tmp/svn
-        gzip $DIR/resitesvn-incr-$date.tar.gz $DIR/resitesvn-incr-$date.tar
-        scp $DIR/resitesvn-incr-$date.tar.gz backup@dsrscbkp01:~/resite/svn/.
-        ssh backup@dsrscbkp01 "find /archive/primary/resite/svn/resite-incr* -mtime +7 -exec rm {} \;"
-        /bin/rm -rf /tmp/svn/*
-
+	tar -zcf $DIR/resite_svn_incr_$date.tar.gz $TMPDIR/*
+	echo "Copying to dsrscbkp01"
+        scp $DIR/resite_svn_incr_$date.tar.gz backup@dsrscbkp01:~/resite/svn/.
+        ssh backup@dsrscbkp01 "find /archive/primary/resite/svn/resite_svn_incr* -mtime +7 -exec rm {} \;"
+	/bin/rm -rf $TMPDIR
+	/bin/rm -rf $DIR/*
 fi
+ENDTIME=$(date +%S)
+TTIME=$(( $INITTIME - $ENDTIME ))
+echo "Total runtime: $TTIME seconds"
 
