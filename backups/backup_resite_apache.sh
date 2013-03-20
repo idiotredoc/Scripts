@@ -4,7 +4,7 @@ DIR=/logs/tmp/apache
 WHICHTYPE="$1"
 day=`/bin/date '+%d'`
 INITTIME=$(date +%S)
-if [ $day -eq 1];
+if [ $day -eq 1 ];
 then
         echo "It's the first of the month! Dont run."
         exit
@@ -27,6 +27,6 @@ then
         rm -rf $DIR/*
 fi
 ENDTIME=$(date +%S)
-TTIME=$(( $INITTIME - $ENDTIME ))
+TTIME=$(( $ENDTIME - $INITTIME ))
 echo "Total runtime: $TTIME seconds"
 

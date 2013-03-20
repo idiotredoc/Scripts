@@ -38,5 +38,5 @@ then
 	rm -rf $DIR/*
 fi
 ENDTIME=$(date +%S)
-TTIME=$(( $INITTIME - $ENDTIME ))
+TTIME=$(( $ENDTIME - $INITTIME ))
 echo "Total runtime: $TTIME seconds"
