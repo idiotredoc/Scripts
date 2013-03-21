@@ -1,0 +1,495 @@
+[antares] ~/public_html/spring13/assignments/a3/.wahab>sync999 2
+STARING PRODUCER THREAD 1
+STARING PRODUCER THREAD 2
+
+STARING CONSUMER THREAD 2
+STARING CONSUMER THREAD 1
+
+Producer 2 produced item 1 at Slot 2 in 1 seconds
+Producer 1 produced item 1 at Slot 1 in 2 seconds
+
+        Buffer STATE:
+        Index:  1       2       
+        State:  C       C       
+        Thread: 1       2       
+
+Consumer 2 consumed item 1 at Slot 2 in 2 seconds
+Consumer 1 consumed item 1 at Slot 1 in 2 seconds
+
+        Buffer STATE:
+        Index:  1       2       
+        State:  F       P       
+        Thread: 0       2       
+
+Producer 1 produced item 2 at Slot 1 in 1 seconds
+
+>>> Producer 1 is DONE after 9 seconds <<<
+Producer 2 produced item 2 at Slot 2 in 1 seconds
+
+>>> Producer 2 is DONE after 9 seconds <<<
+
+        Buffer STATE:
+        Index:  1       2       
+        State:  C       R       
+        Thread: 2       0       
+
+Consumer 2 consumed item 2 at Slot 1 in 1 seconds
+
+<<< Consumer 2 is DONE after 12 seconds >>>
+
+        Buffer STATE:
+        Index:  1       2       
+        State:  F       C       
+        Thread: 0       1       
+
+Consumer 1 consumed item 2 at Slot 2 in 2 seconds
+
+<<< Consumer 1 is DONE after 13 seconds >>>
+
+        Buffer STATE:
+        Index:  1       2       
+        State:  F       F       
+        Thread: 0       0       
+
+Display Final STATE: 
+
+        Production Buffer SLOTS:
+        Index:  1       2       
+        P1:     1       1       
+        P2:     2       2       
+
+        Consumption Buffer SLOTS:
+        Index:  1       2       
+        C1:     1       2       
+        C2:     2       1       
+
+        Production TIMES in seconds:
+        Index:  1       2       
+        P1:     2       1       
+        P2:     1       1       
+
+        Consumption TIMES in seconds:
+        Index:  1       2       
+        C1:     2       2       
+        C2:     2       1       
+
+        Producers LIFE Span in seconds:
+        Index:  1       2       
+                9       9       
+
+        Consumers LIFE Span in seconds:
+        Index:  1       2       
+                13      12      
+
+        Total Time of ALL: 15 seconds
+
+[antares] ~/public_html/spring13/assignments/a3/.wahab>sync999 
+STARING PRODUCER THREAD 1
+STARING PRODUCER THREAD 2
+STARING PRODUCER THREAD 3
+STARING PRODUCER THREAD 4
+STARING PRODUCER THREAD 5
+STARING PRODUCER THREAD 6
+STARING PRODUCER THREAD 7
+STARING PRODUCER THREAD 8
+STARING PRODUCER THREAD 9
+
+STARING CONSUMER THREAD 1
+STARING CONSUMER THREAD 2
+STARING CONSUMER THREAD 3
+STARING CONSUMER THREAD 4
+STARING CONSUMER THREAD 5
+STARING CONSUMER THREAD 6
+STARING CONSUMER THREAD 7
+STARING CONSUMER THREAD 8
+STARING CONSUMER THREAD 9
+
+Producer 7 produced item 1 at Slot 7 in 2 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  P       P       P       P       P       P       C       P       P       
+        Thread: 2       1       3       4       5       6       8       8       9       
+
+Producer 1 produced item 1 at Slot 2 in 9 seconds
+Producer 9 produced item 1 at Slot 9 in 4 seconds
+Producer 3 produced item 1 at Slot 3 in 3 seconds
+Producer 5 produced item 1 at Slot 5 in 6 seconds
+Producer 8 produced item 1 at Slot 8 in 6 seconds
+Consumer 8 consumed item 1 at Slot 7 in 1 seconds
+Producer 4 produced item 1 at Slot 4 in 8 seconds
+Producer 6 produced item 1 at Slot 6 in 8 seconds
+Producer 2 produced item 1 at Slot 1 in 9 seconds
+Consumer 4 consumed item 1 at Slot 3 in 4 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  C       C       P       C       C       C       P       C       C       
+        Thread: 4       2       1       9       1       6       3       3       7       
+
+Consumer 1 consumed item 1 at Slot 5 in 4 seconds
+Consumer 7 consumed item 1 at Slot 9 in 3 seconds
+Consumer 9 consumed item 1 at Slot 4 in 4 seconds
+Consumer 2 consumed item 1 at Slot 2 in 7 seconds
+Consumer 3 consumed item 1 at Slot 8 in 4 seconds
+Producer 3 produced item 2 at Slot 7 in 6 seconds
+Producer 1 produced item 2 at Slot 3 in 3 seconds
+Consumer 6 consumed item 1 at Slot 6 in 4 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  C       P       C       P       P       F       C       P       P       
+        Thread: 4       3       5       2       4       0       3       6       7       
+
+Producer 3 produced item 3 at Slot 2 in 1 seconds
+Consumer 4 consumed item 2 at Slot 1 in 6 seconds
+Producer 6 produced item 2 at Slot 8 in 2 seconds
+Producer 7 produced item 2 at Slot 9 in 7 seconds
+Producer 2 produced item 2 at Slot 4 in 4 seconds
+Producer 4 produced item 2 at Slot 5 in 8 seconds
+Consumer 3 consumed item 2 at Slot 7 in 6 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  P       C       C       C       C       P       P       C       C       
+        Thread: 9       4       5       3       6       3       5       1       8       
+
+Producer 3 produced item 4 at Slot 6 in 8 seconds
+Consumer 4 consumed item 3 at Slot 2 in 6 seconds
+Consumer 5 consumed item 1 at Slot 3 in 4 seconds
+Consumer 3 consumed item 3 at Slot 4 in 1 seconds
+Producer 5 produced item 2 at Slot 7 in 5 seconds
+Producer 9 produced item 2 at Slot 1 in 6 seconds
+Consumer 8 consumed item 2 at Slot 9 in 3 seconds
+Consumer 1 consumed item 2 at Slot 8 in 9 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  C       P       P       P       C       C       C       F       P       
+        Thread: 2       1       4       3       6       4       9       0       6       
+
+Consumer 4 consumed item 4 at Slot 6 in 8 seconds
+Consumer 2 consumed item 2 at Slot 1 in 4 seconds
+Producer 1 produced item 3 at Slot 2 in 4 seconds
+Consumer 6 consumed item 2 at Slot 5 in 9 seconds
+Producer 4 produced item 3 at Slot 3 in 7 seconds
+Consumer 9 consumed item 2 at Slot 7 in 7 seconds
+Producer 1 produced item 4 at Slot 1 in 2 seconds
+Producer 2 produced item 3 at Slot 8 in 5 seconds
+Producer 7 produced item 3 at Slot 6 in 4 seconds
+Producer 4 produced item 4 at Slot 5 in 2 seconds
+Consumer 1 consumed item 3 at Slot 3 in 1 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  C       C       P       P       C       C       P       C       P       
+        Thread: 8       6       5       3       1       5       1       2       6       
+
+Producer 3 produced item 5 at Slot 4 in 7 seconds
+Consumer 6 consumed item 3 at Slot 2 in 3 seconds
+Consumer 2 consumed item 3 at Slot 8 in 3 seconds
+Producer 6 produced item 3 at Slot 9 in 7 seconds
+Consumer 5 consumed item 2 at Slot 6 in 4 seconds
+Producer 1 produced item 5 at Slot 7 in 6 seconds
+Consumer 8 consumed item 3 at Slot 1 in 2 seconds
+Consumer 1 consumed item 4 at Slot 5 in 4 seconds
+Producer 5 produced item 3 at Slot 3 in 9 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  P       P       C       C       P       P       C       P       C       
+        Thread: 8       7       1       6       4       2       4       6       5       
+
+Consumer 6 consumed item 4 at Slot 4 in 3 seconds
+Consumer 4 consumed item 5 at Slot 7 in 1 seconds
+Consumer 5 consumed item 3 at Slot 9 in 5 seconds
+Producer 2 produced item 4 at Slot 6 in 2 seconds
+Producer 8 produced item 2 at Slot 1 in 3 seconds
+Producer 4 produced item 5 at Slot 5 in 5 seconds
+Producer 6 produced item 4 at Slot 8 in 4 seconds
+Producer 7 produced item 4 at Slot 2 in 9 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  C       C       C       P       C       C       P       C       P       
+        Thread: 3       5       1       1       6       4       2       7       5       
+
+Consumer 1 consumed item 5 at Slot 3 in 4 seconds
+Consumer 7 consumed item 2 at Slot 8 in 2 seconds
+Producer 1 produced item 6 at Slot 4 in 9 seconds
+Producer 2 produced item 5 at Slot 7 in 6 seconds
+Consumer 3 consumed item 4 at Slot 1 in 6 seconds
+Consumer 5 consumed item 4 at Slot 2 in 3 seconds
+Producer 8 produced item 3 at Slot 8 in 2 seconds
+Consumer 4 consumed item 6 at Slot 6 in 5 seconds
+Consumer 6 consumed item 5 at Slot 5 in 8 seconds
+Producer 6 produced item 5 at Slot 1 in 1 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  R       P       P       C       P       P       C       C       P       
+        Thread: 0       8       3       7       2       4       3       1       5       
+
+Producer 5 produced item 4 at Slot 9 in 8 seconds
+Consumer 3 consumed item 5 at Slot 7 in 6 seconds
+Consumer 2 consumed item 4 at Slot 1 in 1 seconds
+Producer 8 produced item 4 at Slot 2 in 4 seconds
+Producer 2 produced item 6 at Slot 5 in 4 seconds
+Producer 3 produced item 6 at Slot 3 in 7 seconds
+Consumer 1 consumed item 6 at Slot 8 in 9 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  P       C       C       C       C       P       P       P       C       
+        Thread: 6       2       4       7       1       4       7       9       3       
+
+Producer 4 produced item 6 at Slot 6 in 9 seconds
+Producer 7 produced item 5 at Slot 7 in 7 seconds
+Consumer 7 consumed item 3 at Slot 4 in 8 seconds
+Consumer 3 consumed item 6 at Slot 9 in 5 seconds
+Consumer 2 consumed item 5 at Slot 2 in 6 seconds
+Producer 6 produced item 6 at Slot 1 in 7 seconds
+Consumer 1 consumed item 7 at Slot 5 in 2 seconds
+Consumer 4 consumed item 7 at Slot 3 in 5 seconds
+Consumer 7 consumed item 4 at Slot 6 in 2 seconds
+Producer 3 produced item 7 at Slot 9 in 3 seconds
+Producer 9 produced item 3 at Slot 8 in 4 seconds
+Producer 1 produced item 7 at Slot 4 in 5 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  C       P       P       C       P       P       C       C       C       
+        Thread: 1       6       2       4       4       8       9       2       3       
+
+Consumer 9 consumed item 3 at Slot 7 in 6 seconds
+Producer 4 produced item 7 at Slot 5 in 9 seconds
+Producer 6 produced item 7 at Slot 2 in 8 seconds
+Consumer 1 consumed item 8 at Slot 1 in 7 seconds
+Producer 8 produced item 5 at Slot 6 in 6 seconds
+Consumer 4 consumed item 8 at Slot 4 in 7 seconds
+Producer 2 produced item 7 at Slot 3 in 7 seconds
+Consumer 3 consumed item 7 at Slot 9 in 7 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  P       C       C       P       C       C       P       C       F       
+        Thread: 1       1       3       2       7       4       4       2       0       
+
+Consumer 2 consumed item 6 at Slot 8 in 3 seconds
+Producer 1 produced item 8 at Slot 1 in 4 seconds
+Consumer 1 consumed item 9 at Slot 2 in 2 seconds
+
+<<< Consumer 1 is DONE after 126 seconds >>>
+Consumer 7 consumed item 5 at Slot 5 in 2 seconds
+Consumer 3 consumed item 8 at Slot 3 in 3 seconds
+Producer 4 produced item 8 at Slot 7 in 6 seconds
+Producer 6 produced item 8 at Slot 8 in 7 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  C       P       P       P       P       C       C       R       P       
+        Thread: 5       3       8       2       4       4       9       0       7       
+
+Producer 2 produced item 8 at Slot 4 in 6 seconds
+Producer 3 produced item 8 at Slot 2 in 5 seconds
+Producer 7 produced item 6 at Slot 9 in 1 seconds
+Consumer 4 consumed item 9 at Slot 6 in 7 seconds
+
+<<< Consumer 4 is DONE after 134 seconds >>>
+Producer 8 produced item 6 at Slot 3 in 2 seconds
+Producer 4 produced item 9 at Slot 5 in 1 seconds
+
+>>> Producer 4 is DONE after 137 seconds <<<
+Consumer 5 consumed item 5 at Slot 1 in 8 seconds
+Consumer 6 consumed item 6 at Slot 4 in 1 seconds
+Consumer 9 consumed item 4 at Slot 7 in 1 seconds
+Consumer 7 consumed item 6 at Slot 8 in 6 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  P       C       C       P       C       P       P       F       C       
+        Thread: 1       2       5       2       8       5       7       0       6       
+
+Consumer 5 consumed item 6 at Slot 3 in 1 seconds
+Consumer 2 consumed item 7 at Slot 2 in 8 seconds
+Producer 3 produced item 9 at Slot 3 in 4 seconds
+
+>>> Producer 3 is DONE after 148 seconds <<<
+Consumer 6 consumed item 7 at Slot 9 in 4 seconds
+Producer 6 produced item 9 at Slot 8 in 6 seconds
+
+>>> Producer 6 is DONE after 149 seconds <<<
+Producer 2 produced item 9 at Slot 4 in 4 seconds
+
+>>> Producer 2 is DONE after 150 seconds <<<
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  P       P       C       C       C       P       P       C       P       
+        Thread: 1       9       3       2       8       5       7       5       8       
+
+Producer 5 produced item 5 at Slot 6 in 7 seconds
+Producer 7 produced item 7 at Slot 7 in 7 seconds
+Producer 9 produced item 4 at Slot 2 in 1 seconds
+Consumer 8 consumed item 4 at Slot 5 in 9 seconds
+Producer 1 produced item 9 at Slot 1 in 7 seconds
+
+>>> Producer 1 is DONE after 155 seconds <<<
+Consumer 2 consumed item 8 at Slot 4 in 3 seconds
+Consumer 9 consumed item 5 at Slot 2 in 1 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  C       P       C       F       P       C       C       C       P       
+        Thread: 7       9       3       0       7       8       6       5       8       
+
+Consumer 3 consumed item 9 at Slot 3 in 6 seconds
+
+<<< Consumer 3 is DONE after 162 seconds >>>
+Consumer 6 consumed item 8 at Slot 7 in 3 seconds
+Producer 8 produced item 7 at Slot 9 in 7 seconds
+Consumer 5 consumed item 7 at Slot 8 in 7 seconds
+Producer 5 produced item 6 at Slot 4 in 3 seconds
+Producer 9 produced item 5 at Slot 2 in 6 seconds
+Consumer 8 consumed item 5 at Slot 6 in 7 seconds
+Consumer 7 consumed item 7 at Slot 1 in 7 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  F       C       P       C       P       F       P       P       C       
+        Thread: 0       5       8       8       7       0       5       9       2       
+
+Producer 7 produced item 8 at Slot 5 in 8 seconds
+Consumer 8 consumed item 6 at Slot 4 in 1 seconds
+Producer 8 produced item 8 at Slot 3 in 2 seconds
+Consumer 2 consumed item 9 at Slot 9 in 8 seconds
+
+<<< Consumer 2 is DONE after 175 seconds >>>
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  P       C       C       P       C       F       P       P       F       
+        Thread: 7       5       9       8       7       0       5       9       0       
+
+Producer 7 produced item 9 at Slot 1 in 1 seconds
+
+>>> Producer 7 is DONE after 181 seconds <<<
+Producer 9 produced item 6 at Slot 8 in 7 seconds
+Producer 5 produced item 7 at Slot 7 in 9 seconds
+Consumer 5 consumed item 8 at Slot 2 in 8 seconds
+Consumer 9 consumed item 6 at Slot 3 in 3 seconds
+Producer 8 produced item 9 at Slot 4 in 4 seconds
+
+>>> Producer 8 is DONE after 185 seconds <<<
+Consumer 7 consumed item 8 at Slot 5 in 8 seconds
+Consumer 6 consumed item 9 at Slot 7 in 5 seconds
+
+<<< Consumer 6 is DONE after 188 seconds >>>
+Producer 9 produced item 7 at Slot 6 in 6 seconds
+Producer 5 produced item 8 at Slot 9 in 3 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  C       P       P       C       F       R       F       C       R       
+        Thread: 5       9       5       8       0       0       0       9       0       
+
+Consumer 8 consumed item 7 at Slot 4 in 2 seconds
+Consumer 5 consumed item 9 at Slot 1 in 8 seconds
+
+<<< Consumer 5 is DONE after 192 seconds >>>
+Consumer 9 consumed item 7 at Slot 8 in 4 seconds
+Producer 9 produced item 8 at Slot 2 in 3 seconds
+Consumer 9 consumed item 8 at Slot 9 in 1 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  P       C       P       F       F       C       F       F       F       
+        Thread: 9       7       5       0       0       8       0       0       0       
+
+Consumer 7 consumed item 9 at Slot 2 in 2 seconds
+
+<<< Consumer 7 is DONE after 201 seconds >>>
+Producer 5 produced item 9 at Slot 3 in 8 seconds
+
+>>> Producer 5 is DONE after 206 seconds <<<
+Producer 9 produced item 9 at Slot 1 in 3 seconds
+
+>>> Producer 9 is DONE after 207 seconds <<<
+Consumer 8 consumed item 8 at Slot 6 in 8 seconds
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  C       F       C       F       F       F       F       F       F       
+        Thread: 8       0       9       0       0       0       0       0       0       
+
+Consumer 8 consumed item 9 at Slot 1 in 3 seconds
+
+<<< Consumer 8 is DONE after 212 seconds >>>
+Consumer 9 consumed item 9 at Slot 3 in 5 seconds
+
+<<< Consumer 9 is DONE after 219 seconds >>>
+
+        Buffer STATE:
+        Index:  1       2       3       4       5       6       7       8       9       
+        State:  F       F       F       F       F       F       F       F       F       
+        Thread: 0       0       0       0       0       0       0       0       0       
+
+Display Final STATE: 
+
+        Production Buffer SLOTS:
+        Index:  1       2       3       4       5       6       7       8       9       
+        P1:     2       3       2       1       7       4       4       1       1       
+        P2:     1       4       8       6       7       5       3       4       4       
+        P3:     3       7       2       6       4       3       9       2       3       
+        P4:     4       5       3       5       5       6       5       7       5       
+        P5:     5       7       3       9       6       4       7       9       3       
+        P6:     6       8       9       8       1       1       2       8       8       
+        P7:     7       9       6       2       7       9       7       5       1       
+        P8:     8       1       8       2       6       3       9       3       4       
+        P9:     9       1       8       2       2       8       6       2       1       
+
+        Consumption Buffer SLOTS:
+        Index:  1       2       3       4       5       6       7       8       9       
+        C1:     5       8       3       5       3       8       5       1       2       
+        C2:     2       1       8       1       2       8       2       4       9       
+        C3:     8       7       4       1       7       9       9       3       3       
+        C4:     3       1       2       6       7       6       3       4       6       
+        C5:     3       6       9       2       1       3       8       2       1       
+        C6:     6       5       2       4       5       4       9       7       7       
+        C7:     9       8       4       6       5       8       1       5       2       
+        C8:     7       9       1       5       6       4       4       6       1       
+        C9:     4       7       7       7       2       3       8       9       3       
+
+        Production TIMES in seconds:
+        Index:  1       2       3       4       5       6       7       8       9       
+        P1:     9       3       4       2       6       9       5       4       7       
+        P2:     9       4       5       2       6       4       7       6       4       
+        P3:     3       6       1       8       7       7       3       5       4       
+        P4:     8       8       7       2       5       9       9       6       1       
+        P5:     6       5       9       8       7       3       9       3       8       
+        P6:     8       2       7       4       1       7       8       7       6       
+        P7:     2       7       4       9       7       1       7       8       1       
+        P8:     6       3       2       4       6       2       7       2       4       
+        P9:     4       6       4       1       6       7       6       3       3       
+
+        Consumption TIMES in seconds:
+        Index:  1       2       3       4       5       6       7       8       9       
+        C1:     4       9       1       4       4       9       2       7       2       
+        C2:     7       4       3       1       6       3       8       3       8       
+        C3:     4       6       1       6       6       5       7       3       6       
+        C4:     4       6       6       8       1       5       5       7       7       
+        C5:     4       4       5       3       8       1       7       8       8       
+        C6:     4       9       3       3       8       1       4       3       5       
+        C7:     3       2       8       2       2       6       7       8       2       
+        C8:     1       3       2       9       7       1       2       8       3       
+        C9:     4       7       6       1       1       3       4       1       5       
+
+        Producers LIFE Span in seconds:
+        Index:  1       2       3       4       5       6       7       8       9       
+                155     150     148     137     206     149     181     185     207     
+
+        Consumers LIFE Span in seconds:
+        Index:  1       2       3       4       5       6       7       8       9       
+                126     175     162     134     192     188     201     212     219     
+
+        Total Time of ALL: 220 seconds
