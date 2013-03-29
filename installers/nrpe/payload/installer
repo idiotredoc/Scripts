@@ -25,6 +25,10 @@ tar -xvf nrpe-2.14.tar.gz
 cd nrpe-2.14
 echo "Installing NRPE..."
 ./configure && make all && make install-plugin && make install-daemon && make install-daemon-config && make install-xinetd
+cd ..
+unzip nagios-plugins-master.zip
+cd nagios-plugins-master/check_mem
+cp check_mem.pl /usr/local/nagios/libexec
 echo "Configuring Xinetd..."
 if [ -f /etc/xinetd.d/nrpe ]; then
 	sed -i "s/only_from = 127.0.0.1/only_from = 127.0.0.1 $NAGIOS_SERV/g" /etc/xinetd.d/nrpe 
@@ -32,4 +36,8 @@ else
 	touch /etc/xinetd.d/nrpe 
         cat "only_from  = 127.0.0.1 $NAGIOS_SERV" >> /etc/xinetd.d/nrpe
 fi
+cat "nrpe            5666/tcp                        # NRPE" >> /etc/services
 service xinetd restart
+echo "Adding to firewall..."
+iptables -I INPUT -p tcp -m tcp --dport 5666 -j ACCEPT
+service iptables save
