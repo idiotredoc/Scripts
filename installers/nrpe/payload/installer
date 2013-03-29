@@ -1,0 +1,34 @@
+#!/bin/bash
+#Install and configure NRPE for use 
+MAIL=nathan.lutz@resiteonline
+USER=nagios
+GROUP=nagios
+PASS=H3yL1st3n!
+echo "Creating nagios user and group..."
+CRYPT=$(perl -e 'print crypt($PASS, "password")' $password)
+/usr/sbin/useradd -m -p $CRYPT $USER
+echo "Extracting Nagios plugins ..."
+tar -xvf nagios-plugins-1.4.16.tar.gz
+cd nagios-plugins-1.4.16
+./configure && make && make install
+chown nagios:nagios /usr/local/nagios
+chown -R nagios:nagios /usr/local/nagios/libexec
+echo "Installing Xinetd if needed"
+if [ `rpm -ql xinetd | grep not`]; then
+	sleep 1
+else
+	yum install xinetd -y
+fi
+cd ../.
+tar -xvf nrpe-2.14.tar.gz
+cd nrpe-2.14
+echo "Installing NRPE..."
+./configure && make all && make install-plugin && make install-daemon && make install-daemon-config && make install-xinetd
+echo "Configuring Xinetd..."
+if [ -f /etc/xinetd.d/nrpe ]; then
+	cat "only_from		= 127.0.0.1 10.93.78.141" >> /etc/xinetd.d/nrpe
+else
+	touch /etc/xinetd.d/nrpe 
+        cat "only_from          = 127.0.0.1 10.93.78.141" >> /etc/xinetd.d/nrpe
+fi
+service xinetd restart
