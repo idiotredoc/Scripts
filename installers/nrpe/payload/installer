@@ -4,6 +4,7 @@ MAIL=nathan.lutz@resiteonline
 USER=nagios
 GROUP=nagios
 PASS=H3yL1st3n!
+NAGIOS_SERV=10.93.78.141
 echo "Creating nagios user and group..."
 CRYPT=$(perl -e 'print crypt($PASS, "password")' $password)
 /usr/sbin/useradd -m -p $CRYPT $USER
@@ -26,9 +27,9 @@ echo "Installing NRPE..."
 ./configure && make all && make install-plugin && make install-daemon && make install-daemon-config && make install-xinetd
 echo "Configuring Xinetd..."
 if [ -f /etc/xinetd.d/nrpe ]; then
-	cat "only_from		= 127.0.0.1 10.93.78.141" >> /etc/xinetd.d/nrpe
+	sed -i "s/only_from = 127.0.0.1/only_from = 127.0.0.1 $NAGIOS_SERV/g" /etc/xinetd.d/nrpe 
 else
 	touch /etc/xinetd.d/nrpe 
-        cat "only_from          = 127.0.0.1 10.93.78.141" >> /etc/xinetd.d/nrpe
+        cat "only_from  = 127.0.0.1 $NAGIOS_SERV" >> /etc/xinetd.d/nrpe
 fi
 service xinetd restart
