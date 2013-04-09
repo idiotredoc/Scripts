@@ -6,7 +6,7 @@ GROUP=nagios
 PASS=H3yL1st3n!
 NAGIOS_SERV=10.93.78.141
 echo "Installing pre-reqs..."
-yum install openssl-devel gcc -y
+yum install openssl-devel gcc unzip -y
 echo "Creating nagios user and group..."
 CRYPT=$(perl -e 'print crypt($PASS, "password")' $password)
 /usr/sbin/useradd -m -p $CRYPT $USER
@@ -17,7 +17,7 @@ cd nagios-plugins-1.4.16
 chown nagios:nagios /usr/local/nagios
 chown -R nagios:nagios /usr/local/nagios/libexec
 echo "Installing Xinetd if needed"
-if [ `rpm -ql xinetd | grep not`]; then
+if [ `rpm -ql xinetd | grep not` ]; then
 	sleep 1
 else
 	yum install xinetd -y
@@ -26,7 +26,7 @@ cd ../.
 tar -xvf nrpe-2.14.tar.gz
 cd nrpe-2.14
 echo "Installing NRPE..."
-./configure && make all && make install-plugin && make install-daemon && make install-daemon-config && make install-xinetd
+./configure --enable-command-args && make all && make install-plugin && make install-daemon && make install-daemon-config && make install-xinetd
 cd ..
 unzip nagios-plugins-master.zip
 cd nagios-plugins-master/check_mem
@@ -36,5 +36,5 @@ echo "Configuring Xinetd..."
 echo "nrpe            5666/tcp                        # NRPE" >> /etc/services
 service xinetd restart
 echo "Adding to firewall..."
-iptables -I INPUT -p tcp -m tcp --dport 5666 -j ACCEPT
+iptables -I INPUT -p tcp -m tcp -s 10.93.78.141 --dport 5666 -j ACCEPT
 service iptables save
