@@ -2,14 +2,11 @@ Nathan Lutz
 CS471 
 Wahab
 Assignment 3 - Synchronization
-This code is compiled on Linux, but runs on Solaris
+This code is compiled on Solaris, but also compiles and runs on Linux 
 
 Submitted Files:
-ChatServer.c
-ChatServer.o
-ChatServer
-ChatClient.c
-ChatClient.o
-ChatClient
+sync999.c
+sync999.o
+sync999
 MakeFile
 README
