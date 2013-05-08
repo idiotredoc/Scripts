@@ -1,0 +1,10 @@
+Assignment 4
+Dr. Wahab
+
+Part A.
+After hand-digesting the keys 1-34, I used digest.sh to run crypto to 
+reveal plain.txt 
+
+Part B.
+
+I appended "cairo" to both plainfile1 and plainfile2, then used openssl to create the MAC for the two files. Once this was performed I compared the hashes to the MAC file you provided, and found that plainfile2 is indeed the original message. 
