@@ -1,0 +1,10 @@
+# starting Sat Sep 22 16:34:24 2012
+# memory overrun protection of 4 Bytes
+# initializing new memory with 0xAA
+# sweeping deleted memory with 0xEE
+# aborts on OVERWRITE_MEMORY 
+# not thread save; if you use threads, recompile with -DTHREAD_SAVE
+# internal buffer now 32768
+# finished Sat Sep 22 16:34:24 2012
+# total allocation requests:    206 ; max. mem used 2 kBytes
+# leak      0 Bytes	:-)

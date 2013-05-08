@@ -1,0 +1,32 @@
+%!PS-ADOBE-3.0
+%%Creator: cs330 PSGraphics class
+%%BoundingBox: 0 0 432 432
+%%EndComments
+/drawIt {
+newpath % setClip 0 0 10000 10000
+0 0 moveto
+0 10000 rlineto
+10000 0  rlineto
+0 -10000 rlineto
+closepath clip
+1 0 0 setrgbcolor
+newpath % drawLine (0, 0) (160, 160)
+0 0 moveto
+160 160 lineto
+stroke
+0 0.784314 0 setrgbcolor
+newpath % drawLine (160, 160) (400, 0)
+160 160 moveto
+400 0 lineto
+stroke
+0 0 1 setrgbcolor
+newpath % drawLine (160, 160) (80, 400)
+160 160 moveto
+80 400 lineto
+stroke
+} def
+gsave % 400 400 432 432
+ 0.0 400 translate
+ 1.0 -1.0 scale
+ drawIt
+grestore
