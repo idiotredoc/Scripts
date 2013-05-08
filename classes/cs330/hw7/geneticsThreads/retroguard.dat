@@ -1,0 +1,8 @@
+#
+#
+#.class genetics/GeneticsApplet
+.class genetics/Genetics
+#.method genetics/Genetics/main ([Ljava/lang/String;)V
+
+
+

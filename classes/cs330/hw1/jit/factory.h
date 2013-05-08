@@ -1,0 +1,53 @@
+#ifndef FACTORY_H
+#define FACTORY_H
+
+#include "item.h"
+#include "order.h"
+
+
+class Factory {
+public:
+  Factory ();
+  Factory (std::string name);
+  Factory (const Factory& f); //copy constructor
+  ~Factory(); //destructor
+   
+  const Factory& operator= (const Factory& f); //assignment 
+  
+// Factory name attribute
+  std::string getName() const    {return name;}
+  void setName (std::string nm)  {name = nm;}
+
+
+  // Clear all orders for this factory
+  void clearOrders();
+
+  // Place an order for some number of items.
+  // If a prior order has been placed for these, this additional
+  // order adds to that prior one. The Item is also updated to reflect
+  // the change in total number of that item ordered by all factories.
+  void orderItems (Item* itemToOrder, int numToOrder);
+
+
+  // Access to Orders (in alphabetic order by item name)
+  typedef Order* OrderPosition;
+  OrderPosition begin() const;
+  OrderPosition end() const;
+
+  // Find the position of the order corresponding to the 
+  // given item. If no such order exists, return end().
+  OrderPosition find (Item*) const;
+
+
+private:
+  std::string name;
+
+  // Dynamically allocated array of Order - do NOT change this
+  //   choice of data structures.
+  Order* orders;
+  int maxOrders;
+  int numOrders;
+};
+
+
+#endif

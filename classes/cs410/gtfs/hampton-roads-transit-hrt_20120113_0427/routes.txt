@@ -1,0 +1,69 @@
+route_long_name,route_id,route_type,route_text_color,agency_id,route_color,route_url,route_desc,route_short_name
+CRADDOCK,041,3,,,,http://www.gohrt.com/routes/route-41.pdf,Downtown Portsmouth/Cradock ,41
+FORT EUSTIS EXPRESS,113,3,,,,http://www.gohrt.com/routes/route-113.pdf,(Ft. Eustis) Coliseum Mall/Fort Eustis Express  ,113
+ELIZABETH RIVER FERRY,090,4,,,,http://www.gohrt.com/services/paddlewheel-ferry#schedule,Norfolk/Portsmouth Ferry,90
+JEFFERSON AVE,112,3,,,,http://www.gohrt.com/routes/route-112.pdf,(Jefferson) Downtown Newport News/Riverside Hospital ,112
+FOX HILL,115,3,,,,http://www.gohrt.com/routes/route-115.pdf,(Mall Hall) Buckroe/Willow Oaks/Downtown Hampton ,115
+COLONIAL AVE,011,3,,,,http://www.gohrt.com/routes/route-11.pdf,Downtown Norfolk/Colonial Place ,11
+INDIAN RIVER RD,012,3,,,,http://www.gohrt.com/routes/route-12.pdf,South Norfolk/TCC Virginia Beach  ,12
+CAMPOSTELLA RD,013,3,,,,http://www.gohrt.com/routes/route-13.pdf,Downtown Norfolk/Robert Hall Boulevard/TCC Chesapeake ,13
+BATTLEFIELD BLVD,014,3,,,,http://www.gohrt.com/routes/route-14.pdf,Robert Hall/TCC Chesapeake,14
+CROSSTOWN,015,3,,,,http://www.gohrt.com/routes/route-15.pdf,Naval Station Norfolk/Robert Hall Boulevard ,15
+COLLEY AVENUE,016,3,,,,http://gohrt.com/route/norfolk,Old Dominion University/Fort Norfolk ,16
+THE NET,017,3,,,,http://www.gohrt.com/services/the-net,Downtown Norfolk ,17
+BALLENTINE BLVD,018,3,,,,http://www.gohrt.com/routes/route-18.pdf,Downtown Norfolk/Ballentine Boulevard ,18
+GENERAL BOOTH BLVD,033,3,,,,http://www.gohrt.com/routes/route-33.pdf,(General Booth) North Seashore/Municipal Center ,33
+VB WAVE,030,3,,,,http://www.gohrt.com/services/vb-wave,Atlantic Ave ,30
+VB WAVE,031,3,,,,http://www.gohrt.com/services/vb-wave,Virginia Aquarium Museum Express ,31
+HOLLAND ROAD,036,3,,,,http://www.gohrt.com/routes/route-36.pdf,(Holland) Pembroke East ,36
+OCEANA,037,3,,,,http://www.gohrt.com/routes/route-37.pdf,Dam Neck/Oceana/Lynnhaven Mall ,37
+RUDEE INLET SHUTTLE,034,3,,,,http://www.gohrt.com/services/vb-wave,Rudee Inlet/Atlantic ,34
+LYNNHAVEN PKWY,029,3,,,,http://www.gohrt.com/routes/route-29.pdf,(Lynnhaven) Pleasure House Road/TCC Virginia Beach ,29
+PHOE0,117,3,,,,http://www.gohrt.com/routes/route-117.pdf,(Phoebus) Hampton University/V.A. Hospital ,117
+KECOUGHTAN,101,3,,,,http://www.gohrt.com/routes/route-101.pdf,(Dwtn. NN/Dwtn. Hamp.) Downtown Newport News/Downtown Hampton ,101
+OYSTER POINT SHUTTLE,119,3,,,,http://www.gohrt.com/routes/route-119.pdf,(Oyster Point) Patrick Henry Mall/Thimble Shoals Blvd ,119
+SOUTH NORFOLK,006,3,,,,http://www.gohrt.com/routes/route-6.pdf,Downtown Norfolk/South Norfolk/Robert Hall Boulevard ,6
+MAGRUDER BOULEVARD,118,3,,,,http://www.gohrt.com/routes/route-118.pdf,(Magruder) Langley/Semple Farm Road ,118
+MAX Express,919,3,,,,http://www.gohrt.com/routes/route-918-919.pdf,Virginia Beach to Joint Forces Staff College Norfolk/Naval Station Norfolk,919
+MAX Express,918,3,,,,http://www.gohrt.com/routes/route-918-919.pdf,Virginia Beach to Joint Forces Staff College Norfolk/Naval Station Norfolk,918
+DEEP CREEK,057,3,,,,http://www.gohrt.com/routes/route-57.pdf,Robert Hall Boulevard/Camelot ,57
+VB WAVE,032,3,,,,http://www.gohrt.com/services/vb-wave,Shoppers Express ,32
+CHESTERFIELD,009,3,,,,http://www.gohrt.com/routes/route-9.pdf,Downtown Norfolk/Chesterfield ,9
+SMITHFIELD,064,3,,,,http://www.gohrt.com/routes/route-64.pdf,Smithfield/Gwaltney and Northrop Grumman ,64
+BUCKROE,109,3,,,,http://www.gohrt.com/routes/route-109.pdf,(Pembroke) Downtown Hampton/Buckroe ,109
+HIGH ST,047,3,,,,http://www.gohrt.com/routes/route-47.pdf,Downtown Portsmouth/Churchland ,47
+ACADEMY PARK,050,3,,,,http://www.gohrt.com/routes/route-50.pdf,Academy Park/Victory Crossing ,50
+MALLORY,120,3,,,,http://www.gohrt.com/routes/route-120.pdf,(Mallory) Downtown Hampton/Mallory/Buckroe ,120
+HAMPTON BLVD,002,3,,,,http://www.gohrt.com/routes/route-2.pdf,Naval Station Norfolk/Hampton Boulevard ,2
+NORTHAMPTON BLVD,027,3,,,,http://www.gohrt.com/routes/route-27.pdf,Pleasure House Rd./Military Circle ,27
+BOW CREEK BLVD,026,3,,,,http://www.gohrt.com/routes/route-26.pdf,International Parkway/TCC Virginia Beach ,26
+WARWICK BOULEVARD,106,3,,,,http://www.gohrt.com/routes/route-106.pdf,(Warwick) Newport News/Warwick Boulevard,106
+VIRGINIA BEACH BLVD,020,3,,,,http://www.gohrt.com/routes/route-20.pdf,Downtown Norfolk/Virginia Beach Oceanfront ,20
+WILLOUGHBY,005,3,,,,http://www.gohrt.com/routes/route-5.pdf,Wards Corner/Willoughby ,5
+CHURCH ST,004,3,,,,http://www.gohrt.com/routes/route-4.pdf,Norfolk General Hospital/ODU/Downtown Norfolk ,4
+QUEEN STREET,102,3,,,,http://www.gohrt.com/routes/route-102.pdf,(Coliseum) Coliseum Mall/Downtown Hampton ,102
+SHELL RD,103,3,,,,http://www.gohrt.com/routes/route-103.pdf,(Shell Rd.) Downtown Newport News/Downtown Hampton ,103
+DOWNTOWN NORFOLK/PORTSMOUTH,045,3,,,,http://www.gohrt.com/routes/route-45.pdf,Downtown Norfolk/Portsmouth ,45
+MIDTOWN,044,3,,,,http://www.gohrt.com/routes/route-44.pdf,Norfolk General Hospital/Midtown Portsmouth ,44
+LONDON BLVD,043,3,,,,http://gohrt.com/routes/route-43.pdf,County Street / Bart Street,43
+DENBIGH BOULEVARD,107,3,,,,http://www.gohrt.com/routes/route-107.pdf,(Warwick) Newport News/Warwick Boulevard ,107
+NEWSOME PARK,104,3,,,,http://www.gohrt.com/routes/route-104.pdf,(Marshall) Downtown Newport News/Newmarket ,104
+BRIARFIELD ROAD,105,3,,,,http://www.gohrt.com/routes/route-105.pdf,(Briarfield) Maple Avenue & 27th Stree/Coliseum Mall ,105
+NEWTOWN RD,025,3,,,,http://www.gohrt.com/routes/route-25.pdf,(Newtown) Miliary Circle/Princess Anne ,25
+MAX Express,967,3,,,,http://www.gohrt.com/routes/route-967.pdf,Virginia Beach-Chesapeake to Newport News,967
+TIDEWATER DRIVE,008,3,,,,http://www.gohrt.com/routes/route-8.pdf,Downtown Norfolk/Little Creek Amphib. Base ,8
+MAX Express,961,3,,,,http://www.gohrt.com/routes/route-961.pdf,Newport News-Hampton to Norfolk,961
+MAX Express,962,3,,,,http://www.gohrt.com/routes/route-962.pdf,Suffolk-Chesapeake-Portsmouth to Norfolk,962
+WILLIAMSBURG,121,3,,,,http://www.gohrt.com/routes/route-121.pdf,Newport News Transportation Center/Williamsburg,121
+MAX Express,960,3,,,,http://www.gohrt.com/routes/route-960.pdf,Virginia Beach to Norfolk,960
+PRINCESS ANNE RD,023,3,,,,http://www.gohrt.com/routes/route-23.pdf,Medical Tower/Military Circle/JANAF ,23
+GRANBY ST,001,3,,,,http://www.gohrt.com/routes/route-1.pdf,Downtown Norfolk Pembroke East ,1
+LASKIN RD,024,3,,,,http://www.gohrt.com/routes/route-24.pdf,Downtown Norfolk/Fort Story ,24
+CHESAPEAKE BLVD,003,3,,,,http://www.gohrt.com/routes/route-3.pdf,Downtown Norfolk/Naval Station ,3
+MALL HALL LOOP,116,3,,,,http://www.gohrt.com/routes/route-116.pdf,(Mall Hall) Lee Hall/Patrick Henry Mall Loop ,116
+WEAVER ROAD,114,3,,,,http://www.gohrt.com/routes/route-114.pdf,(Weaver Rd.) Newmarket/Downtown Hampton ,114
+BAINBRIDGE BLVD,058,3,,,,http://www.gohrt.com/routes/route-58.pdf,South Norfolk/Bainbridge Boulevard ,58
+MAX Express,922,3,,,,http://www.gohrt.com/routes/route-922.pdf,Chesapeake-Virginia Beach to Naval Station Norfolk,922
+The Tide LRT,800,0,,,,http://www.ridethetide.com/map-schedule/tide-map-schedule/,Eastern Virginia Medical Center/Newtown Road ,800
+RIVERSIDE,111,3,,,,http://www.gohrt.com/routes/route-111.pdf,(Denbigh TNCC) Thomas Nelson/Riverside/Denbigh ,111
+THOMAS NELSON CC,110,3,,,,http://www.gohrt.com/routes/route-110.pdf,(Thomas Nelson) Downtown Hampton/Thomas Nelson ,110
