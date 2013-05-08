@@ -1,7 +1,0 @@
-This is the answer to number 3, on assignment redirection:
-find ~/UnixCourse/ -name '*.txt' -print -type f -exec head -1 {} \;
-
-4. What command would you enter to count the number of
-   emacs processes by all users?
-ps -Af | grep emacs
-
