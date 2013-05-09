@@ -1,0 +1,17 @@
+Title Ocsinventory Agent MacOSX
+Version 2.0beta4
+Description 
+DefaultLocation /Applications
+DeleteWarning 
+
+### Package Flags
+
+NeedsAuthorization YES
+Required NO
+Relocatable NO
+RequiresReboot NO
+UseUserMask NO
+OverwritePermissions NO
+AllowBackRev NO
+RootVolumeOnly NO
+OnlyUpdateInstalledLanguages NO

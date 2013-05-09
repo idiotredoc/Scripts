@@ -18,7 +18,7 @@ void printVector(double*, int);
 int main(int argc, char *argv[])
 {
 	double x, sum;
-	int nx,ny,n;
+	int n;
 	double** a;
 	double* b;
         if (argc != 2)
@@ -32,10 +32,7 @@ int main(int argc, char *argv[])
                 infile.open(argv[1]);
                 if (infile.is_open())
 		{
-                        infile >> nx;
-                        infile >> ny;
-                        n = ny * nx;
-
+                        infile >> n;
 			a = createMatrix(n, n);
 			b = createVector(n);
 
