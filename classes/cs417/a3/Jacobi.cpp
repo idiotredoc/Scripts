@@ -57,6 +57,7 @@ int main(int argc, char *argv[])
 	cout << "RHS vector b:" << endl;
 	printVector(b, n);
 
+	
 	deleteMatrix(a, n);
 	deleteVector(b);
 
