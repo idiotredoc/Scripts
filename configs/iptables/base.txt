@@ -1,0 +1,13 @@
+*filter
+:INPUT ACCEPT [74671969:10101085473]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [62474485:51743790782]
+# Allow loopback 
+-A INPUT -i lo -j ACCEPT
+# Allow established 
+-A INPUT -m conntrack --state ESTABLISHED,RELATED -j ACCEPT
+# Allow Nagios
+-A INPUT -s 10.93.78.141 -p tcp -m tcp --dport 5666 -j ACCEPT
+# Block all else incoming
+-A INPUT -j REJECT
+COMMIT
