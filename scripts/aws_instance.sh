@@ -14,6 +14,19 @@ OPT=$2
 # file contianing instance ids and start/stop flags
 INSTANCEFILE=/home/nlutz/ec2_instances
 
+#Takes no args, prints DNS updates, if any
+update_dns ()
+{
+        IPADDR=$(ec2-describe-instances $1 | grep NICASSOCIATION | awk {'print $2'})
+	while [ -z "$IPADDR" ]; do
+	   IPADDR=$(ec2-describe-instances $1 | grep NICASSOCIATION | awk {'print $2'})
+	done
+        HOST=$(ec2-describe-instances i-d88a3cf9 | grep TAG.*Name | awk {'print $5'})
+        QUERY="update powerdns.records set content ='"$IPADDR"' where name = '"$HOST"';"
+        echo "Updating $HOST to $IPADDR in PowerDNS!"
+	echo $QUERY | mysql -u dynamic -pr3fl3x1v3 -h 10.93.76.19 
+}
+
 case "$OPT" in
 
 one) if [ $COMMAND == start ]
@@ -24,6 +37,10 @@ one) if [ $COMMAND == start ]
 	read INSTANCEID
         echo "Starting $INSTANCEID!"
 	ec2-start-instances $INSTANCEID 
+	if [ $DNS == "Y" ]
+        then
+           update_dns $INSTANCEID
+        fi
 	elif [ $COMMAND == stop ]
      then
         ec2-describe-instances | grep -v Function | awk '/Name/ {print $3" "$5}'
@@ -41,9 +58,13 @@ all) if [ $COMMAND == start ]
      then
 	echo "starting all AWS instances!"
 	# get list of instances and boot them 
-	while read -r INSTANCEID FLAG; do
+	while read -r INSTANCEID FLAG DNS; do
 		echo "starting $INSTANCEID "
 	        ec2-start-instances $INSTANCEID
+		if [ $DNS == "Y" ]
+		then 
+		   update_dns $INSTANCEID
+		fi
 	done < $INSTANCEFILE
      elif [ $COMMAND == stop ] 
      then
@@ -67,6 +88,10 @@ flagged) if [ $COMMAND == start ]
 		   then
 		   	   echo "starting $INSTANCEID "
 		           ec2-start-instances $INSTANCEID
+	                   if [ $DNS == "Y" ]                
+			   then
+                	      update_dns $INSTANCEID
+	                   fi
  		   fi
             done < $INSTANCEFILE
          elif [ $COMMAND == stop ] 
