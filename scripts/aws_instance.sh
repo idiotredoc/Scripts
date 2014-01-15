@@ -24,7 +24,7 @@ update_dns ()
         HOST=$(ec2-describe-instances i-d88a3cf9 | grep TAG.*Name | awk {'print $5'})
         QUERY="update powerdns.records set content ='"$IPADDR"' where name = '"$HOST"';"
         echo "Updating $HOST to $IPADDR in PowerDNS!"
-	echo $QUERY | mysql -u dynamic -pr3fl3x1v3 -h 10.93.76.19 
+	echo $QUERY | mysql -u dynamic -p********* -h 10.93.76.19 
 }
 
 case "$OPT" in
